@@ -14,3 +14,17 @@
     background: black;
     opacity: 0.5;
 }
+
+@media (max-width: 991px) {
+	.register {
+		border-bottom: 1px solid lightgrey;
+		width: 90%;
+		margin-left: 5%;
+	}
+}
+
+@media (min-width: 992px) {
+	.register {
+		border-right: 1px solid lightgrey;
+	}
+}

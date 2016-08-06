@@ -3,16 +3,49 @@
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content modalCustomize">
 			<div class="modal-header">
-				<button type="button" class="close closeModal" aria-label="Close">
+				<button type="button" class="close" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title">Modal title</h4>
 			</div>
 			<div class="modal-body">
-				<p>One fine body&hellip;</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary closeModal">Save changes</button>
+				<div class="row">
+					<div class="col-xs-12 col-md-6 register">
+						<h3> Register </h3>
+						<form class="registerUser">
+						  	<div class="form-group">
+						    	<label for="registerUser">Username or email</label>
+						    	<input type="text" class="form-control" id="username">
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="registerPassword">Password</label>
+						    	<input type="password" class="form-control" id="registerPassword">
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="confirmPassword">Confirm password</label>
+						    	<input type="password" class="form-control" id="confirmPassword">
+						  	</div>
+						  	<div class="form-group text-right">
+						  		<input class="btn btn-primary" type="submit" name="submit" value="Register">
+						  	</div>
+						</form>
+					</div>
+					<div class="col-xs-12 col-md-6 login">
+						<h3> Login </h3>
+						<form class="loginUser">
+						  	<div class="form-group">
+						    	<label for="user">Username or email</label>
+						    	<input type="text" class="form-control" id="user">
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="password">Password</label>
+						    	<input type="password" class="form-control" id="password">
+						  	</div>
+						  	<div class="form-group text-right">
+						  		<input class="btn btn-primary" type="submit" name="submit" value="Sign in">
+						  	</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
