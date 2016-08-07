@@ -10,6 +10,9 @@ Template.Entry.events({
 		let registerUser = template.find("#registerUser").value;
 		let registerPassword = template.find("#registerPassword").value;
 		let confirmPassword = template.find("#confirmPassword").value;
+		template.find("#registerUser").value = "";
+		template.find("#registerPassword").value = "";
+		template.find("#confirmPassword").value = "";
 
 		if(registerPassword == confirmPassword) {
 			Accounts.createUser({
@@ -21,6 +24,11 @@ Template.Entry.events({
 				if (err) {
 					window.alert("Incorrect information, please try again");
 				} else {
+					template.find("#registerUser").value = "";
+					template.find("#registerPassword").value = "";
+					template.find("#confirmPassword").value = "";
+					template.find("#user").value = "";
+					template.find("#password").value = "";
 					let modal = document.getElementById('entry');
 					document.getElementById("entryModal").style.display = "none";	
 				}
@@ -38,6 +46,11 @@ Template.Entry.events({
 				if (err) {
 					window.alert("Incorrect information, please try again");
 				} else {
+					template.find("#registerUser").value = "";
+					template.find("#registerPassword").value = "";
+					template.find("#confirmPassword").value = "";
+					template.find("#user").value = "";
+					template.find("#password").value = "";
 					let modal = document.getElementById('entry');
 					document.getElementById("entryModal").style.display = "none";	
 				}
