@@ -10,9 +10,6 @@ Template.Entry.events({
 		let registerUser = template.find("#registerUser").value;
 		let registerPassword = template.find("#registerPassword").value;
 		let confirmPassword = template.find("#confirmPassword").value;
-		template.find("#registerUser").value = "";
-		template.find("#registerPassword").value = "";
-		template.find("#confirmPassword").value = "";
 
 		if(registerPassword == confirmPassword) {
 			Accounts.createUser({
