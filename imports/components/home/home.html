@@ -1,7 +1,46 @@
 <template name="Home">
-	<div class="row">
-		<div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4">
-			<h1 class="text-center"> home </h1>
+	{{#if currentUser}}
+		<div class="row">
+			<h1 class="text-center">{{currentUser.username}}'s characters</h1>
 		</div>
-	</div>
+	{{else}}
+		<div class="row">
+			<div class="col-xs-12 col-md-offset-3 col-md-6">
+				<h4>
+					<p>Acid Arrow</p>
+				</h4>
+				<h5>
+					<strong>School </strong>conjuration (creation) [acid]
+				</h5>
+				<h5>
+					<strong>Level </strong>sorcerer/wizard 2, magus 2
+				</h5>
+				<h5>
+					<strong>Casting Time </strong>1 standard action
+				</h5>
+				<h5>
+					<strong>Components </strong>V, S, M (rhubarb leaf and an adder's stomach), F (a dart)
+				</h5>
+				<h5>
+					<strong>Range </strong>long (400 ft. + 40 ft./level)
+				</h5>
+				<h5>
+					<strong>Effect </strong>one arrow of acid
+				</h5>
+				<h5>
+					<strong>Duration </strong>1 round + 1 round per three levels
+				</h5>
+				<h5>
+					<strong>Saving Throw </strong>none
+				</h5>
+				<h5>
+					<strong>Spell Resistance </strong>no
+				</h5>	
+				<h4>
+					<p>An arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals 2d4 points of acid damage with no splash damage. For every three caster levels you possess, the acid, unless neutralized, lasts for another round (to a maximum of 6 additional rounds at 18th level), dealing another 2d4 points of damage in each round.
+					</p>
+				</h4>
+			</div>
+		</div>
+	{{/if}}		
 </template>
