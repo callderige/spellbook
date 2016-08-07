@@ -2,6 +2,9 @@
 	{{#if currentUser}}
 		<div class="row">
 			<h1 class="text-center">{{currentUser.username}}'s characters</h1>
+			{{pull}}
+			<button class="import">import</button>
+			<button class="display">display</button>
 		</div>
 	{{else}}
 		<div class="row">
