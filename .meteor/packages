@@ -22,5 +22,4 @@ accounts-password
 iron:router
 ongoworks:google-spreadsheets
 http
-insecure
 underscore
