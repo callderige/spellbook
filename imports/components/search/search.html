@@ -1,0 +1,84 @@
+<template name="Search">
+	<div class="modal" id="searchModal">
+		<div class="modalOpacity"><!-- Adds background opacity--></div>
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content modalCustomize">
+				<div class="modal-header">
+					<button type="button" class="close" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-xs-12 col-md-6 spellSearchInputContainer">
+							<h3> Enter spell name </h3>
+							<form class="spellSearchForm">
+							  	<div class="form-group">
+							    	<input type="text" class="form-control spellName">
+							  	</div>
+							  	<div class="form-group">
+							    	<input type="submit" class="col-xs-12 col-md-4 btn btn-default" value="Search">
+							  	</div>
+							</form>
+						</div>
+					</div>
+					{{#with searchReturn}}
+						<div class="row text-center">
+							<hr>
+							<div class="col-xs-12 col-md-3">
+		 						<h4>Name</h4><p>{{searchReturn.gsx$name}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-3">
+		 						<h4>School</h4><p>{{searchReturn.gsx$school}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-3">
+		 						<h4>Descriptor</h4><p>{{searchReturn.gsx$descriptor}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-3">
+		 						<h4>Level</h4><p>{{searchReturn.gsx$spelllevel}}</p>
+		 					</div>
+	 					</div>
+	 					<div class="row text-center">
+		 					<div class="col-xs-12 col-md-4">
+		 						<h4>Casting time</h4><p>{{searchReturn.gsx$castingtime}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-4">
+		 						<h4>Components</h4><p>{{searchReturn.gsx$components}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-4">
+		 						<h4>Duration</h4><p>{{searchReturn.gsx$duration}}</p>
+		 					</div>
+	 					</div>
+	 					<div class="row text-center">
+							<div class="col-xs-12 col-md-3">
+		 						<h4>Range</h4><p>{{searchReturn.gsx$range}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-3">
+		 						<h4>AoE</h4><p>{{searchReturn.gsx$area}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-3">
+		 						<h4>Target</h4><p>{{searchReturn.gsx$targets}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-3">
+		 						<h4>Effect</h4><p>{{searchReturn.gsx$effect}}</p>
+		 					</div>
+	 					</div>
+	 					<div class="row text-center">
+		 					<div class="col-xs-12 col-md-6">
+		 						<h4>Saving throw</h4><p>{{searchReturn.gsx$savingthrow}}</p>
+		 					</div>
+		 					<div class="col-xs-12 col-md-6">
+		 						<h4>Spell resistance</h4><p>{{searchReturn.gsx$spellresistence}}</p>
+		 					</div>
+	 					</div>
+	 					<div class="row text-center">
+	 						<div class="col-xs-12">
+		 						<h4>Description</h4><p>{{searchReturn.gsx$description}}</p>
+		 					</div>
+	 					</div>
+        			{{/with}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

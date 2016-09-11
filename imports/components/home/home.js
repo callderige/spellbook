@@ -1,29 +1,38 @@
-Template.Home.helpers({
-	
-});
+import { Meteor } from 'meteor/meteor';
+
 
 Template.Home.events({
-	"click .import": function() {
-		HTTP.call( 'GET', 'https://spreadsheets.google.com/feeds/list/1dlVIAzj5EuCdikbu2hglMDSd8WOZG73lC6yBtkKlak8/od6/public/values?alt=json', {}, function( error, response ) {
+	//The spell database will be empty unless you uncomment this along with "<button class="import">import</button>" in the home.html file.
+	/*"click .import": function() {
+		HTTP.call(  'GET', 'https://spreadsheets.google.com/feeds/list/1dlVIAzj5EuCdikbu2hglMDSd8WOZG73lC6yBtkKlak8/od6/public/values?alt=json', {}, function( error, response ) {
 			let spells = response.data.feed;
 			let key = []
 			key = Object.keys(spells.entry[0]);
+			let spellData = {};
 
-		   	if (error) {
+		   	if(error) {
 		      	console.log(error);
 		   	} else {
-		    	for (let i = 0; i < key.length; i++) {
-					let info = key[i] + " : " + spells.entry[0][key[i]]['$t'];
-					if(key[i] == "title") {
-						info = info.toLowerCase();
-						info = info.replace(/\s/g, "");
+		   		for(let k = 0; k < spells.entry.length; k++) {
+		    		for (let i = 0; i < key.length; i++) {
+						let spellInfo = spells.entry[k][key[i]]['$t'];
+						let spellKey = key[i];
+
+						if(key[i] == "title") {
+							spellInfo = spellInfo.toLowerCase();
+							spellInfo = spellInfo.replace(/\s/g, "");
+						}
+
+						spellData[spellKey] = spellInfo;
+
+						let para = document.createElement("P");       
+						let node = document.createTextNode(spellInfo);      
+						para.appendChild(node);                                
+						document.body.appendChild(para); 
 					}
-					let para = document.createElement("P");       
-					let node = document.createTextNode(info);      
-					para.appendChild(node);                                
-					document.body.appendChild(para); 
+					Meteor.call('addSpell',spellData);
 				}
 		   	}
 		});
-	}
+	}*/
 });

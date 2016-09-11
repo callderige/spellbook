@@ -13,14 +13,12 @@
       <ul class="nav navbar-nav navbar-left">
         {{#if currentUser}}
           <li id="newBook"><a href="">New book</a></li>
-        {{/if}}
+          {{/if}}
+        
       </ul>
-      <form class="navbar-form navbar-left navSearch">
-        <div class="form-group">
-          <input id="spellname" type="text" class="form-control" placeholder="Spell name">
-        </div>
-        <input type="submit" class="btn btn-default" value="Search">
-      </form>
+      <div class="navbar-form navbar-left navSearch">
+        <input type="text" class="btn btn-default displaySearchModal" value="Search">
+      </div>
       <ul class="nav navbar-nav navbar-right">
         {{#if currentUser}}
           <li id="logout"><a href="">Logout</a></li>
@@ -30,4 +28,10 @@
       </ul>
     </div><!--/.nav-collapse -->
   </div>
+  {{#with test}}
+  <p id="newBook"><a href="">{{test.gsx$name}}</a></p>
+          <!-- {{#each subTest}}
+          <p id="newBook"><a href="">{{test.title}}</a></p>
+          {{/each}} -->
+        {{/with}}
 </template>

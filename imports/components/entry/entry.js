@@ -40,17 +40,17 @@ Template.Entry.events({
 		let password = template.find("#password").value;
 
 		Meteor.loginWithPassword(user, password , function(err) { 
-				if (err) {
-					window.alert("Incorrect information, please try again");
-				} else {
-					template.find("#registerUser").value = "";
-					template.find("#registerPassword").value = "";
-					template.find("#confirmPassword").value = "";
-					template.find("#user").value = "";
-					template.find("#password").value = "";
-					let modal = document.getElementById('entry');
-					document.getElementById("entryModal").style.display = "none";	
-				}
-			});
+			if (err) {
+				window.alert("Incorrect information, please try again");
+			} else {
+				template.find("#registerUser").value = "";
+				template.find("#registerPassword").value = "";
+				template.find("#confirmPassword").value = "";
+				template.find("#user").value = "";
+				template.find("#password").value = "";
+				let modal = document.getElementById('entry');
+				document.getElementById("entryModal").style.display = "none";	
+			}
+		});
 	}
 })

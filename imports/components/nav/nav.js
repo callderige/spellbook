@@ -1,7 +1,14 @@
+Template.Nav.onCreated(function() {
+	
+});	
+
+Template.Nav.helpers({
+	
+});
+
 Template.Nav.events({
-	"submit .navSearch": function(event, template) {
-		event.preventDefault();
-		let search = template.find("#spellname").value;
+	"click .displaySearchModal": function(event, template) {
+		document.getElementById("searchModal").style.display = "block";
 	},
 	"click #login": function(event, template) {
 		document.getElementById("entryModal").style.display = "block";
@@ -15,4 +22,4 @@ Template.Nav.events({
 			}
 		});
 	}
-})
+});
