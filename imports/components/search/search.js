@@ -2,6 +2,7 @@ import { SpellDatabase } from '/imports/collections/spellDatabase.js';
 
 Template.Search.onCreated(function() {
 	this.searchedSpell = new ReactiveVar(null);
+
 });	
 
 Template.Search.helpers({
@@ -13,18 +14,14 @@ Template.Search.helpers({
 });
 
 Template.Search.events({
-	"click .modalOpacity": function(event, template) {
-		document.getElementById("searchModal").style.display = "none";
-	},
 	"click .close": function(event, template) {
-		document.getElementById("searchModal").style.display = "none";
-	},
-	"click .btn-close": function(event, template) {
-		document.getElementById("searchModal").style.display = "none";
+		$('#searchModal').modal('hide');
 	},
 	"submit .spellSearchForm": function(event, template) {
 		event.preventDefault();
 		let search = template.find(".spellName").value;
+		search = search.toLowerCase();
+		search = search.replace(/\s/g, "");
 		template.searchedSpell.set(search);
 	}
 });

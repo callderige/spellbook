@@ -1,9 +1,6 @@
 Template.Entry.events({
-	"click .modalOpacity": function(event, template) {
-		document.getElementById("entryModal").style.display = "none";
-	},
 	"click .close": function(event, template) {
-		document.getElementById("entryModal").style.display = "none";
+		$('#entryModal').modal('hide');
 	},
 	"submit .registerUser": function(event,template) {
 		event.preventDefault();
@@ -26,8 +23,7 @@ Template.Entry.events({
 					template.find("#confirmPassword").value = "";
 					template.find("#user").value = "";
 					template.find("#password").value = "";
-					let modal = document.getElementById('entry');
-					document.getElementById("entryModal").style.display = "none";	
+					$('#entryModal').modal('hide');
 				}
 			});
 		} else {
@@ -48,8 +44,7 @@ Template.Entry.events({
 				template.find("#confirmPassword").value = "";
 				template.find("#user").value = "";
 				template.find("#password").value = "";
-				let modal = document.getElementById('entry');
-				document.getElementById("entryModal").style.display = "none";	
+				$('#entryModal').modal('hide');
 			}
 		});
 	}

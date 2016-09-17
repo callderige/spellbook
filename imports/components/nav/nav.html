@@ -13,8 +13,7 @@
       <ul class="nav navbar-nav navbar-left">
         {{#if currentUser}}
           <li id="newBook"><a href="">New book</a></li>
-          {{/if}}
-        
+        {{/if}}
       </ul>
       <div class="navbar-form navbar-left navSearch">
         <input type="text" class="btn btn-default displaySearchModal" value="Search">
@@ -28,10 +27,4 @@
       </ul>
     </div><!--/.nav-collapse -->
   </div>
-  {{#with test}}
-  <p id="newBook"><a href="">{{test.gsx$name}}</a></p>
-          <!-- {{#each subTest}}
-          <p id="newBook"><a href="">{{test.title}}</a></p>
-          {{/each}} -->
-        {{/with}}
 </template>

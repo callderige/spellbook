@@ -8,10 +8,10 @@ Template.Nav.helpers({
 
 Template.Nav.events({
 	"click .displaySearchModal": function(event, template) {
-		document.getElementById("searchModal").style.display = "block";
+		$('#searchModal').modal('show');
 	},
 	"click #login": function(event, template) {
-		document.getElementById("entryModal").style.display = "block";
+		$('#entryModal').modal('show');
 	},
 	"click #logout": function(event, template) {
 		event.preventDefault();
