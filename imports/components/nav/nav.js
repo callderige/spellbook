@@ -21,5 +21,13 @@ Template.Nav.events({
 				window.alert("An error occured while logging out.")
 			}
 		});
+	},
+	"submit .searchSpellForm": function(event, template) {
+		event.preventDefault();
+		let search = template.find(".searchedSpellTest").value;
+		search = search.toLowerCase();
+		search = search.replace(/\s/g, "");
+		Session.set("spelltest", search);
+		$('#searchModal').modal('show');
 	}
 });

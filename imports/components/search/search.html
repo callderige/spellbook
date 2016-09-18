@@ -3,27 +3,18 @@
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content modalCustomize">
 				<div class="modal-header">
-					<button type="button" class="close" aria-label="Close">
+					<div class="col-xs-6">
+		 				<strong class="spell-name">{{searchReturn.gsx$name}}</strong>
+		 			</div>
+		 			<div class="col-xs-6">
+		 			<button type="button" class="close" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
+					</div>
 				</div>
 				<div class="modal-body">
-					<div class="row">
-						<div class="col-xs-12 col-md-6 spellSearchInputContainer">
-							<h3> Enter spell name </h3>
-							<form class="spellSearchForm">
-							  	<div class="form-group">
-							    	<input type="text" class="form-control spellName">
-							  	</div>
-							  	<div class="form-group">
-							    	<input type="submit" class="col-xs-12 col-md-4 btn btn-default" value="Search">
-							  	</div>
-							</form>
-						</div>
-					</div>
 					{{#with searchReturn}}
 						<div class="row text-center">
-							<hr>
 							<div class="col-xs-12 col-md-3">
 		 						<h4>Name</h4><p>{{searchReturn.gsx$name}}</p>
 		 					</div>
