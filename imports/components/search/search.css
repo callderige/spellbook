@@ -1,3 +1,11 @@
 .spell-name {
 	font-size: 1.25em;
 }
+
+.search-modal-hr {
+	background-color: darkgrey;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

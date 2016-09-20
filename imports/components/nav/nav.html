@@ -12,7 +12,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left">
         {{#if currentUser}}
-          <li id="newBook"><a href="">New book</a></li>
+          <li class="nav-button" id="newBook"><a href="">New book</a></li>
         {{/if}}
       </ul>
       <div class="navbar-form navbar-left navSearch">
@@ -23,9 +23,9 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         {{#if currentUser}}
-          <li id="logout"><a href="">Logout</a></li>
+          <li class="nav-button" id="logout"><a href="">Logout</a></li>
         {{else}}
-          <li id="login"><a href="">Login</a></li>
+          <li class="nav-button" id="login"><a href="">Login</a></li>
         {{/if}}
       </ul>
     </div><!--/.nav-collapse -->
