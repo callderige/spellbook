@@ -21,6 +21,7 @@ Template.Nav.events({
 				window.alert("An error occured while logging out.")
 			}
 		});
+		Router.go('/');
 	},
 	"submit .searchSpellForm": function(event, template) {
 		event.preventDefault();

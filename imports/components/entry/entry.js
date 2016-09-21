@@ -45,6 +45,7 @@ Template.Entry.events({
 				template.find("#user").value = "";
 				template.find("#password").value = "";
 				$('#entryModal').modal('hide');
+				Router.go('/');
 			}
 		});
 	}
