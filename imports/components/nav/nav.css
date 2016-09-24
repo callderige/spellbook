@@ -1,7 +1,28 @@
-.navbar-brand-custom {
-	cursor: default;
-}
-
 .nav-button:hover {
 	background-color: darkgrey;
 }
+
+nav li:hover {
+	background-color: darkgrey !important;
+}
+
+@media (min-width: 768px) {
+	nav li {
+		border-right: 1px solid darkgrey;
+	}
+
+	.navbar-brand-custom {
+		border-left: 1px solid darkgrey;
+		border-right: 1px solid darkgrey;
+	}
+	.navbar-brand-custom:hover {
+		color: black !important;
+	}
+	.login-logout {
+		border-left: 1px solid darkgrey;
+		border-right: 1px solid darkgrey;
+	}
+}
+
+}
+

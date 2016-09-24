@@ -24,7 +24,7 @@ Template.NewBook.events({
 			spellbookClass: spellbookClass 
 		}
 
-		Meteor.call('addSpellbook', newSpellbook);
+		Meteor.call('spellbooks.add', newSpellbook);
 		Router.go('/');
 	}
 });

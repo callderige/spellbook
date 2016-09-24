@@ -23,6 +23,10 @@ Template.Nav.events({
 		});
 		Router.go('/');
 	},
+	"click #home": function(event, template) {
+		event.preventDefault();
+		Router.go('/');
+	},
 	"submit .searchSpellForm": function(event, template) {
 		event.preventDefault();
 		let search = template.find(".searchedSpellTest").value;
