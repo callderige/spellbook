@@ -1,3 +1,7 @@
+.navbar-brand-custom {
+	cursor: default;
+}
+
 .nav-button:hover {
 	background-color: darkgrey;
 }

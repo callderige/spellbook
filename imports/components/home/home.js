@@ -1,7 +1,21 @@
 import { Meteor } from 'meteor/meteor';
+import { SpellBooks } from '/imports/collections/spellBooks.js';
 
+Template.Home.onCreated(function() {
+	Meteor.subscribe('spellbooks');
+})
+
+Template.Home.helpers({
+	"userBooks": function() {
+		let userId = Meteor.userId();
+		return SpellBooks.find({userId: userId});
+	}
+});
 
 Template.Home.events({
+	"click .delete": function(event, template) {
+		Meteor.call('spellbooks.delete', this._id);
+	}
 	//The spell database will be empty unless you uncomment this along with "<button class="import">import</button>" in the home.html file.
 	/*"click .import": function() {
 		HTTP.call(  'GET', 'https://spreadsheets.google.com/feeds/list/1dlVIAzj5EuCdikbu2hglMDSd8WOZG73lC6yBtkKlak8/od6/public/values?alt=json', {}, function( error, response ) {
