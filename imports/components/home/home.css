@@ -10,6 +10,10 @@
 	padding: 15px;
 }
 
+.spellbook-clickable:hover {
+	cursor: pointer;
+}
+
 .spellbook-edit-options {
 	background-color: #f6f6f6;
 	padding: 15px;

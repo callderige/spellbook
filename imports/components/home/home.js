@@ -48,28 +48,38 @@ Template.Home.events({
 	}*/
 });
 
-Template.Test.onCreated(function() {
-	this.test = new ReactiveVar(false);
+Template.Spellbook.onCreated(function() {
+	this.editingBook = new ReactiveVar(false);
 });
 
-Template.Test.helpers({
+Template.Spellbook.helpers({
 	"editable": function() {
-		return Template.instance().test.get();
+		return Template.instance().editingBook.get();
 	}
 });
 
-Template.Test.events({
+Template.Spellbook.events({
 	"click #save": function(event, template) {
-		template.test.set(false);
 		let spellbookName = template.find('.spellbookNameValue').value;
 		let spellbookClass = template.find('.spellbookClassValue').value;
-		Meteor.call('spellbooks.edit', this._id, spellbookName, spellbookClass);
+
+		let checker = false;
+		if(spellbookName.replace(/\s/g, "").length > 0 && spellbookClass.replace(/\s/g, "").length > 0) {
+			checker = true;
+		}
+
+		if(checker == true) {
+			Meteor.call('spellbooks.edit', this._id, spellbookName, spellbookClass);
+			template.editingBook.set(false);
+		} else {
+			window.alert("a field is empty");
+		}
 	},
 	"click #delete": function(event, template) {
 		Meteor.call('spellbooks.delete', this._id);
 	},
 	"click #edit": function(event, template) {
-		template.test.set(true);
+		template.editingBook.set(true);
 	}
 });
 
