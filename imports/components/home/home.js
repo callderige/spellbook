@@ -13,9 +13,6 @@ Template.Home.helpers({
 });
 
 Template.Home.events({
-	"click .delete": function(event, template) {
-		Meteor.call('spellbooks.delete', this._id);
-	}
 	//The spell database will be empty unless you uncomment this along with "<button class="import">import</button>" in the home.html file.
 	/*"click .import": function() {
 		HTTP.call(  'GET', 'https://spreadsheets.google.com/feeds/list/1dlVIAzj5EuCdikbu2hglMDSd8WOZG73lC6yBtkKlak8/od6/public/values?alt=json', {}, function( error, response ) {
@@ -50,3 +47,29 @@ Template.Home.events({
 		});
 	}*/
 });
+
+Template.Test.onCreated(function() {
+	this.test = new ReactiveVar(false);
+});
+
+Template.Test.helpers({
+	"editable": function() {
+		return Template.instance().test.get();
+	}
+});
+
+Template.Test.events({
+	"click #save": function(event, template) {
+		template.test.set(false);
+		let spellbookName = template.find('.spellbookNameValue').value;
+		let spellbookClass = template.find('.spellbookClassValue').value;
+		Meteor.call('spellbooks.edit', this._id, spellbookName, spellbookClass);
+	},
+	"click #delete": function(event, template) {
+		Meteor.call('spellbooks.delete', this._id);
+	},
+	"click #edit": function(event, template) {
+		template.test.set(true);
+	}
+});
+

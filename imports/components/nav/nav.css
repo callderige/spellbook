@@ -17,6 +17,7 @@ nav li:hover {
 	}
 	.navbar-brand-custom:hover {
 		color: black !important;
+		background-color: darkgrey !important;
 	}
 	.login-logout {
 		border-left: 1px solid darkgrey;

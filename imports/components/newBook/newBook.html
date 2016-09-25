@@ -16,21 +16,4 @@
 			</form>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-offset-1 col-xs-10">
-			{{#each userBooks}}
-				<div class="col-xs-12 col-md-2" id="{{_id}}" style=" border: 1px solid black; margin-bottom: 10px; margin-right: 10px; word-wrap: break-word;">
-					<h4>{{spellbookName}}</h4>
-					<h5>{{spellbookClass}}</h5>
-					<hr>
-					<div class="form-group">
-					<button class="btn btn-default form-control">Edit</button>
-					</div>
-					<div class="form-group">
-					<button class="btn btn-danger form-control delete">Delete</button>
-					</div>
-				</div>
-			{{/each}}
-		</div>
-	</div>
 </template>

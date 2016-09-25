@@ -26,5 +26,10 @@ Template.NewBook.events({
 
 		Meteor.call('spellbooks.add', newSpellbook);
 		Router.go('/');
+	},
+	"click .spellbook-clickable": function(event, template) {
+		event.preventDefault();
+
+		console.log(event.target.id)
 	}
 });

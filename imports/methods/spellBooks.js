@@ -9,7 +9,9 @@ Meteor.methods({
 	'spellbooks.delete': function(spellbookId) {
 		SpellBooks.remove(spellbookId);
 	},
-	'spellbooks.edit': function(spellbookId) {
-		
+	'spellbooks.edit': function(_id, bookName, bookClass) {
+		SpellBooks.update(_id, {
+			$set: {spellbookName: bookName, spellbookClass: bookClass}
+		});
 	}
 });
